@@ -1,0 +1,7 @@
+.product-scene-remix/
+outputs/
+generated_images/
+*.tmp
+__pycache__/
+.DS_Store
+Thumbs.db

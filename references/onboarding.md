@@ -51,13 +51,32 @@ Validate or create the selected directory when permitted. If the user does not c
 
 ## 4. Save defaults
 
+Save `initialized: true` only after at least one product has been fully recorded, all persistent reference files exist and are readable, identity and proportion fields are present, and the output directory is configured. Otherwise keep `initialized: false` and continue onboarding.
+
 Save JSON with at least:
 
 ```json
 {
   "profile_version": 1,
   "initialized": true,
-  "products": [],
+  "products": [
+    {
+      "id": "product-01",
+      "name": "user-provided-product-name",
+      "references": {
+        "front": "products/product-01-front.png"
+      },
+      "identity": {
+        "category": "extracted-from-reference",
+        "silhouette": "extracted-from-reference",
+        "aspect_ratio": "measured-from-reference",
+        "material": "extracted-from-reference",
+        "color": "extracted-from-reference",
+        "closure": "extracted-from-reference",
+        "label_structure": "extracted-from-reference"
+      }
+    }
+  ],
   "output": {
     "directory": "outputs/product-scene-remix",
     "format": "png",
@@ -77,6 +96,20 @@ Save JSON with at least:
 
 The user's current choices override these defaults. Do not store secrets, API keys, temporary paths, or unrelated personal information.
 
+## Profile validity check
+
+A saved profile is valid only when:
+
+- `initialized` is exactly `true`;
+- `products` contains at least one product;
+- every product has a unique non-empty ID;
+- every product has at least one readable reference image;
+- every referenced file exists in persistent storage;
+- identity data includes silhouette, aspect ratio, material, color, closure when applicable, and label structure;
+- the output directory is configured.
+
+If any condition fails, treat the profile as incomplete and resume only the missing onboarding steps. Do not discard valid products or repeat completed steps unnecessarily.
+
 ## 5. Finish
 
 Tell the user:
@@ -84,4 +117,3 @@ Tell the user:
 > 初始化已经完成。以后只需上传一张参考场景图，我会自动读取产品档案、完成替换并保存到默认目录。
 
 If a scene request was waiting, resume it immediately.
-

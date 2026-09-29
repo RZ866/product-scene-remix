@@ -7,8 +7,12 @@ Accept an output only after checking the following.
 - Correct silhouette and width-to-height ratio
 - Correct body color, material, transparency, and finish
 - Correct lid, cap, cork, pump, handle, or accessory
+- Correct count and structure of reeds, wicks, straps, handles, attachments, and supplied accessories
 - Correct label position and visual hierarchy
+- Correct label proportions, color blocks, logo area, brand identity, and verified wording
 - No mixed, invented, stretched, or compressed product features
+- No added, removed, simplified, embellished, recolored, restyled, or redesigned product features
+- Product appearance remains consistent across every output unless the user explicitly requested product variants
 
 ## Replacement completeness
 
@@ -47,10 +51,12 @@ Accept an output only after checking the following.
 
 - Every output, including a single-image request, has visible secondary-detail differentiation from the scene reference
 - Product replacement itself is not counted as differentiation
+- The protected target product was not used as a differentiation variable
 - At least two suitable non-product secondary categories were deliberately adjusted unless the user explicitly protected those elements
 - With multiple outputs, every output differs from both the reference and the other outputs
 - Decoration sets, prop arrangements, and lighting treatments are not copied unchanged
 - Variation does not alter product identity
+- Product count or placement changed only when physically necessary or explicitly requested, and the change was minimal
 - Supporting props do not obscure or compete with the product
 
 ## Packaging

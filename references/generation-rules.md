@@ -27,6 +27,29 @@ Preserve silhouette, width-to-height ratio, material, color, transparency, finis
 
 When a replacement product is materially taller or wider than the original, reduce product count, increase spacing, adjust dividers, or change display density to preserve plausible physical clearance. Never shrink a product below a realistic scene scale merely to retain the original count.
 
+## Protected main product
+
+Treat every saved product reference as an identity-locked subject. Preserve all verified product attributes, including:
+
+- silhouette, geometry, width-to-height ratio, and real-world proportions;
+- body material, transparency, surface finish, color, and contents color;
+- lid, cap, cork, pump, nozzle, handle, strap, wick, reed, attachment, and their verified count and structure;
+- label shape, position, proportions, color blocks, logo area, visual hierarchy, brand identity, and verified wording;
+- supplied accessories, product-specific decoration, and distinctive construction details.
+
+Do not redesign, simplify, embellish, recolor, restyle, relabel, add features to, remove features from, or create variants of the target product unless the user explicitly requests a product-design change. Do not use the target product's design, color, material, label, structure, accessories, quantity, spacing, or orientation as a source of creative differentiation.
+
+Only these scene-integration adaptations are allowed without a product-design request:
+
+- uniform scaling that preserves verified proportions and realistic scene size;
+- perspective and orientation required by the scene or explicitly requested by the user;
+- natural occlusion;
+- scene-consistent illumination, highlights, reflections, contact shadows, cast shadows, and depth of field.
+
+These adaptations must not change product identity or construction. Preserve the reference scene's target-product count and placement by default. Change count or placement only when the verified product cannot physically fit at realistic scale, preserving it would require distortion, or the user explicitly requests a change. Make the smallest necessary adjustment. Such an adjustment is functional scene fitting and never counts as differentiation.
+
+Across multiple outputs, keep the same verified product design, color, material, label, closure, accessories, and construction. Do not generate product colorways, packaging variants, label variants, or structural variants unless explicitly requested. All output-to-output differentiation must come from the surrounding non-product scene.
+
 ## Composition and realism
 
 Preserve scene category, main camera angle, perspective, important structures, and narrative. Match surface contact, shadows, reflections, ambient color, highlights, depth of field, occlusion, and scale by distance. Avoid floating objects, pasted edges, inconsistent lighting, and exact cloned repetitions.
@@ -39,7 +62,7 @@ Every generated output must include deliberate secondary-detail differentiation 
 
 For every output, adjust at least two suitable non-product secondary categories:
 
-- density, spacing, or subtle rotation;
+- density, spacing, count, placement, or subtle rotation of non-product props, decorations, trays, dividers, plants, towels, or supporting objects;
 - trays, risers, dividers, baskets, mats, tissue, cushioning, or cardboard;
 - plants, flowers, foliage, vases, or planters;
 - towels, fabric, folds, colors, or stack height;
@@ -48,6 +71,8 @@ For every output, adjust at least two suitable non-product secondary categories:
 - crop, negative space, depth of field, or subtle background tone.
 
 The changes must be visible and intentional rather than accidental generation noise. Preserve the reference's core scene, camera logic, and narrative while giving the result its own supporting-detail treatment.
+
+Never alter the protected target product to satisfy differentiation. Product count or placement changes made only for physical fit do not count toward the required two non-product categories.
 
 When producing multiple outputs, each output must differ both from the scene reference and from the other outputs. Do not reuse the same decoration set, prop arrangement, lighting treatment, or secondary-detail plan unchanged across the set.
 
@@ -89,8 +114,11 @@ Every generation request should identify:
 - every class of object that must be replaced;
 - allowed product distribution;
 - identity features that must remain faithful;
+- that the target product is identity-locked and must not be redesigned, restyled, recolored, relabeled, simplified, embellished, or varied;
 - scene invariants;
 - output-specific secondary variations;
 - target and non-target inventories;
 - text, price, packaging, aspect-ratio, pixel-size, display-density, and realism policies;
 - no original remnants, hybrids, invented brands, unrelated text, watermarks, application UI, unintended packaging, or distorted proportions.
+
+State explicitly in the generation request: `The supplied product reference is an identity-locked subject. Preserve its verified design exactly. Apply all required differentiation only to non-product scene elements.`
